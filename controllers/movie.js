@@ -4,7 +4,6 @@ const NotFoundError = require('../errors/error-not-found');
 const ForbiddenRequestError = require('../errors/error-forbidden-request');
 
 module.exports.createMovie = (req, res, next) => {
-  const { _id } = req.user;
   const {
     country,
     director,
@@ -30,7 +29,7 @@ module.exports.createMovie = (req, res, next) => {
     nameEN,
     thumbnail,
     movieId,
-    owner: _id,
+    owner: req.user._id,
   })
     .then((movie) => res.status(201).send(movie))
     .catch((err) => {

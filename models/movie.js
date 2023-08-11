@@ -14,11 +14,11 @@ const movieSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  trailerLink: {
+  trailer: {
     type: String,
     required: true,
     validate: {
-      validator(v) { validator.isURL(v); },
+      validator: (link) => validator.isURL(link),
       message: 'Введен некорректный url',
     },
   },

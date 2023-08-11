@@ -29,13 +29,14 @@ const validationCreateMovie = celebrate({
     nameEN: Joi.string().min(2).max(30).required(),
     nameRU: Joi.string().min(2).max(30).required(),
     description: Joi.string().min(2).required(),
-    trailerLink: Joi.string().pattern(regex).required(),
+    trailer: Joi.string().pattern(regex).required(),
     image: Joi.string().pattern(regex).required(),
     country: Joi.string().min(2).max(30).required(),
     thumbnail: Joi.string().pattern(regex).required(),
     director: Joi.string().min(2).max(30).required(),
     duration: Joi.number().required(),
     year: Joi.string().required(),
+    movieId: Joi.number().required(),
   }),
 });
 
