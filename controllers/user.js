@@ -43,7 +43,12 @@ module.exports.updateUser = (req, res, next) => {
       if (err.name === 'ValidationError') {
         next(new CodeError('Введенные данные неккоректны'));
         return;
-      } next(err);
+      }
+      if (err.code === 11000) {
+        next(new ConflictValueError('Указаны некорректные email или name'));
+        return;
+      }
+      next(err);
     });
 };
 
