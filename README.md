@@ -1,1 +1,1 @@
-ссылка: api.movies-explorer.spb.nomoreparties.co 
+ссылка: https://api.movies-explorer.spb.nomoreparties.co/
