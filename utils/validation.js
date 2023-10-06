@@ -26,8 +26,8 @@ const validationLogin = celebrate({
 
 const validationCreateMovie = celebrate({
   body: Joi.object().keys({
-    nameEN: Joi.string().min(2).max(30).required(),
-    nameRU: Joi.string().min(2).max(30).required(),
+    nameEN: Joi.string().min(2).required(),
+    nameRU: Joi.string().min(2).required(),
     description: Joi.string().min(2).required(),
     trailer: Joi.string().pattern(regex).required(),
     image: Joi.string().pattern(regex).required(),
